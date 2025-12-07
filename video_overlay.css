@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: transparent;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.overlay-widget {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    z-index: 9999;
+}
+
+.toggle-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #9147ff, #772ce8);
+    border: none;
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(145, 71, 255, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    animation: pulse 2.5s infinite;
+}
+
+.toggle-btn:hover {
+    transform: scale(1.05);
+}
+
+.toggle-btn.dragging {
+    cursor: grabbing;
+    animation: none;
+}
+
+.toggle-icon {
+    font-size: 1.4rem;
+    pointer-events: none;
+}
+
+.toggle-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(145, 71, 255, 0.5); }
+    50% { box-shadow: 0 4px 28px rgba(145, 71, 255, 0.7); }
+}
+
+/* Panel */
+.widget-panel {
+    position: absolute;
+    width: 260px;
+    background: rgba(24, 24, 27, 0.97);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+    transition: all 0.15s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.widget-panel.open {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.widget-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.widget-title {
+    color: #efeff1;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.close-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #adadb8;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+}
+
+.close-btn:hover {
+    background: rgba(255, 77, 77, 0.3);
+    color: #ff4d4d;
+}
+
+.widget-content {
+    padding: 10px;
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.action-btn {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.12s ease;
+}
+
+.action-btn:hover {
+    background: rgba(145, 71, 255, 0.2);
+    border-color: #9147ff;
+}
+
+.action-btn:active {
+    transform: scale(0.95);
+}
+
+.text-section {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#text-area {
+    width: 100%;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: #efeff1;
+    font-family: inherit;
+    font-size: 0.75rem;
+    resize: none;
+    height: 44px;
+}
+
+#text-area::placeholder {
+    color: #848494;
+}
+
+#text-area:focus {
+    outline: none;
+    border-color: #9147ff;
+}
+
+.send-btn {
+    padding: 7px;
+    background: linear-gradient(135deg, #9147ff, #772ce8);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.12s ease;
+}
+
+.send-btn:hover {
+    box-shadow: 0 3px 12px rgba(145, 71, 255, 0.4);
+}
+
+/* Status bar */
+.status-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background: #00f593;
+    border-radius: 50%;
+    animation: dotPulse 2s infinite;
+}
+
+@keyframes dotPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.status-text {
+    font-size: 0.65rem;
+    color: #848494;
+}

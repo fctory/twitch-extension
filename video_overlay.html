@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitch Overlay Extension</title>
+    <link rel="stylesheet" href="video_overlay.css">
+</head>
+<body>
+    <div class="overlay-widget" id="overlay-widget">
+        <button class="toggle-btn" id="toggle-btn">
+            <span class="toggle-icon">🗣️</span>
+        </button>
+
+        <div class="widget-panel" id="widget-panel">
+            <div class="widget-header">
+                <span class="widget-title">Mi Extension</span>
+                <button class="close-btn" id="close-btn">×</button>
+            </div>
+
+            <div class="widget-content">
+                <div class="buttons-grid">
+                    <button class="action-btn" data-action="1">🗣️</button>
+                    <button class="action-btn" data-action="2">🗣️</button>
+                    <button class="action-btn" data-action="3">🗣️</button>
+                    <button class="action-btn" data-action="4">🗣️</button>
+                    <button class="action-btn" data-action="5">🗣️</button>
+                    <button class="action-btn" data-action="6">🗣️</button>
+                </div>
+
+                <div class="text-section">
+                    <textarea id="text-area" placeholder="Escribe tu mensaje..."></textarea>
+                    <button class="send-btn" id="send-btn">Enviar</button>
+                </div>
+
+                <div class="status-bar" id="status-bar">
+                    <span class="status-dot"></span>
+                    <span class="status-text" id="status-text">Conectado</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+    <script src="video_overlay.js"></script>
+</body>
+</html>

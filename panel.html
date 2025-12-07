@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitch Extension Panel</title>
+    <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+    <div class="extension-container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="title">Mi Extensión</h1>
+        </div>
+
+        <!-- Botones Grid -->
+        <div class="buttons-grid">
+            <button class="action-btn" id="btn-1" data-action="1">
+                <span class="btn-icon">🗣️</span>
+                <span class="btn-label">Botón 1</span>
+            </button>
+            <button class="action-btn" id="btn-2" data-action="2">
+                <span class="btn-icon">🗣️</span>
+                <span class="btn-label">Botón 2</span>
+            </button>
+            <button class="action-btn" id="btn-3" data-action="3">
+                <span class="btn-icon">🗣️</span>
+                <span class="btn-label">Botón 3</span>
+            </button>
+            <button class="action-btn" id="btn-4" data-action="4">
+                <span class="btn-icon">🗣️</span>
+                <span class="btn-label">Botón 4</span>
+            </button>
+            <button class="action-btn" id="btn-5" data-action="5">
+                <span class="btn-icon">🗣️</span>
+                <span class="btn-label">Botón 5</span>
+            </button>
+            <button class="action-btn" id="btn-6" data-action="6">
+                <span class="btn-icon">🗣️</span>
+                <span class="btn-label">Botón 6</span>
+            </button>
+        </div>
+
+        <!-- Sección de Texto -->
+        <div class="text-section">
+            <label for="text-area" class="text-label">Mensaje</label>
+            <textarea 
+                id="text-area" 
+                class="text-input" 
+                placeholder="Escribe tu mensaje aquí..."
+                rows="3"
+            ></textarea>
+            <button class="send-btn" id="send-btn">
+                <span>Enviar</span>
+                <svg class="send-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Status -->
+        <div class="status-bar" id="status-bar">
+            <span class="status-dot"></span>
+            <span class="status-text">Conectado</span>
+        </div>
+    </div>
+
+    <!-- Twitch Extension Helper -->
+    <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+    <script src="panel.js"></script>
+</body>
+</html>

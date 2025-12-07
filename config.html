@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración de la Extensión</title>
+    <link rel="stylesheet" href="config.css">
+</head>
+<body>
+    <div class="config-container">
+        <h1 class="config-title">Configuración</h1>
+        <p class="config-subtitle">Personaliza tu extensión</p>
+
+        <!-- Configuración de Botones -->
+        <section class="config-section">
+            <h2 class="section-title">Botones</h2>
+            <p class="section-desc">Personaliza el texto y emoji de cada botón</p>
+            
+            <div class="buttons-config">
+                <div class="button-config-item">
+                    <span class="button-number">1</span>
+                    <input type="text" class="input-icon" id="icon-1" value="🗣️" maxlength="2" placeholder="🗣️">
+                    <input type="text" class="input-label" id="label-1" value="Botón 1" placeholder="Etiqueta">
+                </div>
+                <div class="button-config-item">
+                    <span class="button-number">2</span>
+                    <input type="text" class="input-icon" id="icon-2" value="🗣️" maxlength="2" placeholder="🗣️">
+                    <input type="text" class="input-label" id="label-2" value="Botón 2" placeholder="Etiqueta">
+                </div>
+                <div class="button-config-item">
+                    <span class="button-number">3</span>
+                    <input type="text" class="input-icon" id="icon-3" value="🗣️" maxlength="2" placeholder="🗣️">
+                    <input type="text" class="input-label" id="label-3" value="Botón 3" placeholder="Etiqueta">
+                </div>
+                <div class="button-config-item">
+                    <span class="button-number">4</span>
+                    <input type="text" class="input-icon" id="icon-4" value="🗣️" maxlength="2" placeholder="🗣️">
+                    <input type="text" class="input-label" id="label-4" value="Botón 4" placeholder="Etiqueta">
+                </div>
+                <div class="button-config-item">
+                    <span class="button-number">5</span>
+                    <input type="text" class="input-icon" id="icon-5" value="🗣️" maxlength="2" placeholder="🗣️">
+                    <input type="text" class="input-label" id="label-5" value="Botón 5" placeholder="Etiqueta">
+                </div>
+                <div class="button-config-item">
+                    <span class="button-number">6</span>
+                    <input type="text" class="input-icon" id="icon-6" value="🗣️" maxlength="2" placeholder="🗣️">
+                    <input type="text" class="input-label" id="label-6" value="Botón 6" placeholder="Etiqueta">
+                </div>
+            </div>
+        </section>
+
+        <!-- Configuración de Texto -->
+        <section class="config-section">
+            <h2 class="section-title">Texto por Defecto</h2>
+            <p class="section-desc">Texto placeholder para el área de mensaje</p>
+            <input type="text" class="input-full" id="default-text" 
+                   placeholder="Escribe tu mensaje aquí..." 
+                   value="Escribe tu mensaje aquí...">
+        </section>
+
+        <!-- Botones de Acción -->
+        <div class="config-actions">
+            <button class="btn-save" id="save-config">
+                Guardar Configuración
+            </button>
+            <button class="btn-reset" id="reset-config">
+                Restablecer
+            </button>
+        </div>
+
+        <!-- Estado -->
+        <div class="config-status" id="config-status">
+            <span class="status-message"></span>
+        </div>
+    </div>
+
+    <!-- Twitch Extension Helper -->
+    <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+    <script src="config.js"></script>
+</body>
+</html>
